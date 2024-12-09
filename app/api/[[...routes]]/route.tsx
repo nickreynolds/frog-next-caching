@@ -85,7 +85,7 @@ app.image('/img2', async (c) => {
         <div style={{ display: "flex", flexDirection: "row"}}>
           header
         </div>
-        <div         style={{
+        <div style={{
           color: 'white',
           fontSize: 24,
 
@@ -105,16 +105,9 @@ app.image('/img2', async (c) => {
 })
 
 app.frame('/', (c) => {
-  const { buttonValue, inputText, status } = c
-  const fruit = inputText || buttonValue
   return c.res({
     image: '/img2',
     intents: [
-      <TextInput placeholder="Enter custom fruit..." />,
-      <Button value="apples">Apples</Button>,
-      <Button value="oranges">Oranges</Button>,
-      <Button value="bananas">Bananas</Button>,
-      status === 'response' && <Button.Reset>Reset</Button.Reset>,
     ],
   })
 })
